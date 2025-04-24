@@ -1,0 +1,6 @@
+d41d8cd98f00b204e9800998ecf8427e MD5SUMS.txt
+f9bae2d56cf10e823e6936b504cebfba README.md
+7272e3fbeb4787791114db1a31982add iei_genetics.png
+636d827ee3560e55450a3e48e78269db iei_genetics_table_v1.Rds
+e57e48f057d886b01edb714e292c296c iei_genetics_table_v1.html
+0eb9702be910811e6b8981e0cbf0477a iei_genetics_table_v1.tsv

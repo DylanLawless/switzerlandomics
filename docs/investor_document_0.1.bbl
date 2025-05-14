@@ -1,0 +1,35 @@
+\begin{thebibliography}{3}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Lawless et~al.(2025)Lawless, Saadat, Oumelloul, Boutry, Stadler,
+  Österle, Armida, Haerry, Froese, Schlapbach, and
+  Fellay]{lawless_application_2025}
+Dylan Lawless, Ali Saadat, Mariam~Ait Oumelloul, Simon Boutry, Veronika
+  Stadler, Sabine Österle, Jan Armida, David Haerry, D.~Sean Froese, Luregn~J.
+  Schlapbach, and Jacques Fellay.
+\newblock Application of qualifying variants for genomic analysis.
+\newblock May 2025.
+\newblock \doi{10.1101/2025.05.09.25324975}.
+\newblock URL \url{http://medrxiv.org/lookup/doi/10.1101/2025.05.09.25324975}.
+
+\bibitem[Lawless(2025{\natexlab{a}})]{lawless_panelapprex_2025}
+Dylan Lawless.
+\newblock {PanelAppRex} aggregates disease gene panels and facilitates
+  sophisticated search.
+\newblock March 2025{\natexlab{a}}.
+\newblock \doi{10.1101/2025.03.20.25324319}.
+\newblock URL \url{http://medrxiv.org/lookup/doi/10.1101/2025.03.20.25324319}.
+
+\bibitem[Lawless(2025{\natexlab{b}})]{lawless_quantifying_2025}
+Dylan Lawless.
+\newblock Quantifying prior probabilities for disease-causing variants reveal
+  the top genetic contributors in inborn errors of immunity.
+\newblock March 2025{\natexlab{b}}.
+\newblock \doi{10.1101/2025.03.25.25324607}.
+\newblock URL \url{http://medrxiv.org/lookup/doi/10.1101/2025.03.25.25324607}.
+
+\end{thebibliography}

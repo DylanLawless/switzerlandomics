@@ -1,0 +1,113 @@
+
+\section{Project overview}
+
+Cardiovascular diseases (CVDs) account for roughly 30 percent of global mortality. Genetic and environmental factors jointly shape disease risk, yet current variants explain only a small fraction of heritability. Whole genome sequencing (WGS) of 9 000 Hamburg participants, processed at University Hospital Zurich and phenotyped at University Medical Center Hamburg-Eppendorf, offers base-level resolution for discovery. Analysis and interpretation are conducted at CARDIO-CARE, Davos.
+
+\textbf{Objectives}: discover novel variants associated with CVD outcomes, elucidate biological mechanisms and translate findings into drug targets and clinical practice.
+
+\begin{abstract}
+We present a multi-layered analytic workflow that couples variant-, gene- and pathway-level statistics with probabilistic pathogenicity scoring and automated evidence synthesis. The framework aims to deliver reproducible, actionable reports while preserving rigorous epidemiological standards.
+\end{abstract}
+
+
+\section{Technical approach}
+
+We implement a whole-pipeline framework that captures rare and common genetic effects, preserves clinical interpretability and scales to biobank data.
+
+\subsection*{1. Data generation and quality control}
+\begin{itemize}
+  \item Whole genome or exome sequencing with PCR-free libraries  
+  \item Alignment and joint genotyping using GATK Best Practices \cite{VanDerAuwera2013}  
+  \item Variant filtering: hard filters and VQSR, sample QC with sex-check, depth, het-ratio
+  \item Relatedness and ancestry inference with KING and PCA; outliers removed
+\end{itemize}
+
+\subsection*{2. Single-case clinical genetics}
+\begin{itemize}
+  \item Annotation by VEP, ClinVar, gnomAD, HGMD  
+  \item Automated ACMG/AMP scoring with \textbf{ACMGuru} \cite{Lawless2025ACMGuru}  
+  \item Reporting of pathogenic and likely pathogenic variants, gene–phenotype concordance via HPO
+\end{itemize}
+
+\subsection*{3. Single-variant association testing}
+\begin{itemize}
+  \item Mixed-model logistic regression (SAIGE or REGENIE) controlling for ancestry PCs and kinship \cite{Zhou2020SAIGE}  
+  \item Genomic control and LDSC intercept to confirm residual stratification is negligible
+\end{itemize}
+
+\subsection*{4. Gene-level burden testing}
+\begin{itemize}
+  \item Collapsing of rare (MAF < 0.01) predicted damaging variants  
+  \item SKAT-O and ACAT-V for binary traits \cite{Lee2012SKATO}  
+  \item Weights from CADD, REVEL or LOFTEE; covariates as in single-variant GWAS
+\end{itemize}
+
+\subsection*{5. Pathway-level VSAT}
+\begin{itemize}
+  \item Protein–protein interaction clustering with \textbf{ProteoMCLustR} to create unbiased variant sets (\(<50\) genes per set) \cite{Lawless2025ProteoMCLustR}  
+  \item SKAT-O, STAAR and aggregated Cauchy tests across sets  
+  \item Multiple-testing correction by Benjamini–Yekutieli for dependency
+\end{itemize}
+
+\subsection*{6. Prior integration and risk quantification}
+\begin{itemize}
+  \item Disease-gene priors from \textbf{PanelAppRex} improve power and interpretation \cite{Lawless2025PanelAppRex}  
+  \item \textbf{VarRiskEst} computes patient-level posterior probabilities with credible intervals \cite{Lawless2025Quantitative}
+\end{itemize}
+
+\subsection*{7. Evidence synthesis and reporting}
+\begin{itemize}
+  \item \textbf{GuRu} merges statistical signals with literature and functional data for each candidate variant \cite{Lawless2025GuRu}  
+  \item \textbf{Dante} produces clinician-ready reports using retrieval-augmented generation; every claim is traceable to source  
+  \item Optional reinforcement-learning tuner \cite{Lawless2025Actor} explores model hyper-parameters without over-fitting
+\end{itemize}
+
+\subsection*{8. Output artefacts}
+\begin{itemize}
+  \item Variant-level VCF with pathogenicity tags  
+  \item Gene and pathway summary tables with effect sizes, \textit{p}-values and FDR  
+  \item PDF clinical report plus machine-readable JSON for EHR ingestion
+\end{itemize}
+
+This multi-tiered strategy delivers exhaustive genomic profiling, from bedside phenotypes to population-scale statistics, while enforcing transparent, reproducible interpretation standards.
+
+\bibliographystyle{plainnat}
+
+
+\section*{Project plan}
+
+\begin{enumerate}
+  \item \textbf{Joint multilevel genomics analysis}\\
+  Variant, gene and pathway aggregation using SKAT-O and related tests.
+  First, traditional clinical genetics performed single-case analysis for each patient. Next statistical genetic epidemiology methods are used to performed variant-level (e.g. GWAS), gene-level and protein pathway-level variant set association testing (e.g. SKAT-O with variant collapse). The joint outputs are systematically interpreted without bias to give the complete genomic profile.\citep{Lawless2024Rare}{\href{https://doi.org/10.1101/XXXXXX}{PDF}}
+  
+  \item \textbf{PanelAppRex prior integration}\\
+  Curated gene–disease panels improve power and interpretability.\citep{Lawless2025PanelAppRex}
+  
+  
+
+  
+  \item Archipelago: VSAT p-value visualisation by genomic coordinate \cite{Lawless2025Archipelago}
+  
+    
+    \item Qualifying Variant framework. A model for setting QV such that they can be used genomics pipelines independent of the pipeline code. They can become a shareable public resource that is used during analysis and in the final interpretation step to ensure all queries have been fulfilled and stakeholders can see in simlpe terms what their analysis as involved. This very simple application note is backed by deeper technical applications when merged with the VarRiskEst approach.
+  
+  \item \textbf{VarRiskEst pathogenicity probability}\\
+  Bayesian modelling yields patient-level risk scores with credible intervals.\citep{Lawless2025Quantitative}
+  
+    \item Qualifying Variant framework. A model for setting QV such that they can be used genomics pipelines independent of the pipeline code. They can become a shareable public resource that is used during analysis and in the final interpretation step to ensure all queries have been fulfilled and stakeholders can see in simlpe terms what their analysis as involved. This very simple application note is backed by deeper technical applications when merged with the VarRiskEst approach.
+    
+  \item \textbf{Evidence-based variant interpretation with GuRu}\\
+  Systematic synthesis of VEP outputs and literature.\citep{Lawless2025GuRu}\footnote{\href{https://doi.org/10.1101/YYYYYY}{pre-print}}
+  
+  \item \textbf{Automated reporting via Dante}\\
+  Retrieval-augmented generation produces traceable summaries.\footnote{\href{https://doi.org/10.1101/ZZZZZZ}{pre-print}}
+  
+  \item \textbf{Reinforcement learning augmentation}\\
+  Targeted exploration of analytic hyper-parameters while avoiding over-fitting.\citep{Lawless2025Actor}
+\end{enumerate}
+
+\bibliographystyle{plainnat}
+\bibliography{cardio}
+
+\end{document}

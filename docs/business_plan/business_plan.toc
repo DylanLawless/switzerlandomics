@@ -1,0 +1,10 @@
+\contentsline {section}{\numberline {1}Business Plan}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}Project Overview}{2}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Technology and Innovation}{2}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Unique Selling Proposition}{2}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Market and Business Model}{3}{subsection.1.4}
+\contentsline {subsection}{\numberline {1.5}Team and Development Stage}{3}{subsection.1.5}
+\contentsline {section}{\numberline {2}Use of Funds (CHF 100,000)}{3}{section.2}
+\contentsline {section}{\numberline {3}Execution Timeline and Readiness Plan}{4}{section.3}
+\contentsline {subsection}{\numberline {3.1}Vision}{5}{subsection.3.1}
+\contentsline {section}{\numberline {4}References}{6}{section.4}

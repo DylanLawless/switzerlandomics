@@ -1,0 +1,55 @@
+\documentclass[preprint,12pt,fleqn]{article}\input{../resources/head.tex}
+\input{../resources/variables/variables.tex}
+
+\newcommand{\version}{v1.0}
+
+\lhead{\SO}
+\rhead{}
+% \lfoot{\date{\today}}
+\rfoot{\version}
+
+\begin{document}
+
+% \date{} % Dare alread included
+\title{\Large \bf \SO\\
+genomics {\version}}
+\author[1]{\rm Dylan Lawless, PHD}
+\affil[1]{Department of Intensive Care and Neonatology, Universitäts-Kinderspital Zürich, University of Zürich.
+
+{\color{kispilink}Dylan.Lawless@uzh.ch}}
+\maketitle
+\color{kispiblack}
+\setstretch{1.0} 
+\tableofcontents
+\setstretch{1.2} 
+\clearpage
+
+
+\begin{table}[ht]
+\caption{Summary of GENEtic SequencIng Study Hamburg-Davos (GENESIS-HD) cohorts. *\citet{betschart_biostatistical_2024} report the final post-QC sample set of 8351, excluding GIAB, etc.}
+\label{tab:cohorts}
+\centering
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{1.8cm} >{\raggedright\arraybackslash}p{7cm} >{\raggedright\arraybackslash}p{1.2cm} >{\raggedright\arraybackslash}p{1.2cm} >{\raggedright\arraybackslash}p{2cm}@{}}
+\toprule
+Study & Description & Pre-QC & Post-QC & Ref \\
+\midrule
+HCHS & Hamburg City Health Study (HHS) with deep-phenotyping, including multiomics data, comprehensive imaging, functional testing, and outcome data. & 8123 & 7397 & \citet{jagodzinski_rationale_2020} \\
+Premature MI & Myocardial infarction at age ≤ 50 years. Young Myocardial Infarction (MIYoung) study, Gutenberg Infarction (GIS), and Biomarkers in Acute Cardiac Care (BACC) study. & 517 & 441 & \citet{neumann_diagnosis_2016} \\
+INTERCATH & Invasive coronary angiography, genomic analyses in phenotypes: (i) premature onset of coronary artery disease (CAD), (ii) absence of CAD despite numerous cardiovascular risk factors, and (iii) focal versus diffuse angiographic forms of CAD. & 468 & 405 & \citet{waldeyer_lipid_2017} \\
+AFHRI & Atrial Fibrillation with High-Risk Individuals (AFHRI) study. Genomics for lone atrial fibrillation; unexplained atrial fibrillation in the absence of conventional risk factors. & 149 & 108 & \href{https://clinicaltrials.gov/study/NCT05442970}{NCT05442970} \\
+GrAPHIC &  Primary dilated cardiomyopathies from the Geno- And PHenotyping of Primary Cardiomyopathy (GrAPHIC) study. & 47 & 46 & \citet{keil_multimodal_2024} \\
+GIAB & Genome in a bottle (father/mother/son), replicates & 84 & 81 & \href{https://www.nist.gov/programs-projects/genome-bottle}{NIST GIAB} \\
+\midrule
+GENSIS- HD & CARDIO-CARE DAVOS & 9388 & 8478* & \citet{betschart_biostatistical_2024} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\clearpage
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+
+\end{document}

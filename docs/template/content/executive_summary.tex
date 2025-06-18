@@ -1,0 +1,31 @@
+\section{Executive summary}
+
+The \pmu is proposed to represent the forefront of medical science, translating reasearch into clinical application, including integrated multi-omics and machine-learning for paediatric healthcare. 
+Our strategy allows use a command framework, top-to-bottom, for project management, document writing, and big data technologies, (i.e. genomics, proteomics, metabolomics). 
+
+We focus on establishing clear benchmarks to demonstrate substantial cost-saving potential through precise diagnostics and targeted therapy. For instance, approximately 40\% of probands in rare diseases studies could benefit from a genetic diagnosis
+\citep{wright2023genomic, wojcik2024genome}, 
+with critical care management possible in 77\% of diagnosed cases
+\citep{lunke2023integrated}. 
+Streamlined workflows are necessary to scale rapid whole-genome sequencing for clinically actionable turnaround times \citep{abou2023rapid}. 
+Modelling internal and federal data allows for projections into 2030 to focus on significant reductions in mortality from conditions like sepsis, thanks to precision diagnostics and targeted therapies, \textbf{figure
+\ref{fig:p_cases_sepsis_kispi_yearly_forecast_exec}}.
+
+Establishing these benchmarks as our initial goals underscores the technical feasibility and significant impact of our work, laying the groundwork for further advancements as our understanding and capabilities continue to evolve.
+
+\begin{figure}[h] \hspace*{0cm} 
+\begin{center}
+	\includegraphics[width=1\textwidth]{../stats/foph_key_stats/output/p_cases_sepsis_kispi_yearly_forecast}
+	\caption{Year deaths due to sepsis at \kispi. Black and red values show the expected number of deaths with and without  precise diagnostics and targeted therapy, respectively.
+	This data is based on statistics reported by Bundesamt für Gesundheit (BAG), 
+	\url{https://www.bag.admin.ch/} for years 2010-2022. 
+	Time series was performed using Poisson regression to extrapulate the expected outcomes from 2010-2030.
+	Predictions for the cost and number of cases were generated in section 
+	\ref{sec:benefit_analysis}.	
+	DP: Diagnostic procedure.
+HD: Primary diagnosis.
+ND: Secondary diagnosis.
+}
+	\label{fig:p_cases_sepsis_kispi_yearly_forecast_exec}
+\end{center}
+\end{figure}

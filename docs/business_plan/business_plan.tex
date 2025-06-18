@@ -1,0 +1,172 @@
+\documentclass[preprint,12pt,fleqn]{article}\input{../resources/head.tex}
+\input{../resources/variables/variables.tex}
+\newcommand{\version}{v1.0}
+
+\lhead{\SO} 
+\rhead{}
+% \lfoot{\date{\today}}
+\rfoot{\version}
+
+\begin{document}
+\title{\Large \bf \SO\\
+Business Plan {\version}}
+
+\author[1]{\rm Dylan Lawless, PHD}
+\affil[1]{Department of Intensive Care and Neonatology, Universitäts-Kinderspital Zürich, University of Zürich.
+
+{\color{swisslink}dylan@switzerlandomics.ch}}
+\maketitle
+\color{swissblack}
+\setstretch{1.0} 
+\tableofcontents
+\setstretch{1.2} 
+\clearpage
+
+%vhttps://pionierpreis.ch/application/
+
+\section{Business Plan}
+
+\subsection{Project Overview}
+
+\textbf{Quant} is the missing computational layer that makes genomic data interpretable, actionable, and accountable. Built on rigorous Bayesian inference, Quant transforms raw sequencing data into calibrated, probabilistic conclusions about genetic causality. It replaces subjective, binary interpretation with genome-wide statistical confidence, bringing clarity to clinical diagnostics, AI-driven genomics, and pharmaceutical research.
+
+Developed over six years at UZH, EPFL, and with partners in ETH Zurich, Quant has already been validated in national-scale cohorts and peer-reviewed research. It is now offered as a modular suite: a precomputed database (\textit{Quant DB}), an automated interpretation engine (\textit{Quant scan}), and a full inference pipeline (\textit{Quant calc}).
+
+\vspace{0.5em}
+\noindent\textbf{Motto:} \textit{Technically sound. Incredibly simple.}
+
+\subsection{Technology and Innovation}
+
+Quant introduces a unified statistical framework for variant interpretation:
+\begin{itemize}
+  \item Genome-wide prior probabilities tailored for autosomal dominant, recessive, and X-linked models
+  \item Mode-aware integration of allele frequencies, Hardy-Weinberg equilibrium, variant classification systems (ClinVar, AlphaMissense), and penetrance assumptions
+  \item Outputs include credible intervals and gene-/variant-level posterior probabilities
+\end{itemize}
+
+This replaces heuristic curation workflows with formal, transparent statistical evidence. Quant is the first system to structure both observed and unobserved variation in a rigorous and scalable way.
+
+\subsection{Unique Selling Proposition}
+
+\begin{itemize}
+  \item \textbf{Technically rigorous:} built from first principles, informed by statistical genetics
+  \item \textbf{Clinically validated:} applied in national studies on rare disease and paediatric sepsis
+  \item \textbf{Scalable and interpretable:} designed for both human and machine reading, suitable for AI pipelines
+  \item \textbf{Ready to deploy:} delivered as datasets and callable tools with full documentation
+\end{itemize}
+
+\subsection{Market and Business Model}
+
+Quant addresses three intersecting markets:
+\begin{enumerate}
+  \item Clinical genomics: improving diagnostic clarity in variant interpretation
+  \item Pharmaceutical R\&D: supporting gene target validation, cohort design, and risk stratification
+  \item Machine learning in genomics: providing structured priors for predictive models
+\end{enumerate}
+
+\textbf{Revenue model:}
+\begin{itemize}
+  \item Licensing of the Quant database (precomputed priors)
+  \item Subscription access to Quant scan and Quant calc for diagnostics and biobanks
+  \item Academic and institutional access for research use
+\end{itemize}
+
+\subsection{Team and Development Stage}
+
+\begin{itemize}
+  \item 12 years of PhD-level experience in applied genomics and statistical modelling
+  \item Federal research funding and national-scale clinical collaborations
+  \item 6 years of focused development across UZH, EPFL, and ETH Zurich
+  \item Tools ready for use: \textit{Quant database, Quant scan, Quant calc, PanelAppRex, QV database}
+  \item Validated in 2000 clinical genomes across IEI and sepsis cohorts
+\end{itemize}
+
+
+\section{Use of Funds (CHF 100,000)}
+
+To move from an R\&D project to an operational company, we have prepared a comprehensive and realistic funding plan. The CHF 100,000 grant will support legal setup, infrastructure, marketing, and early product delivery.
+
+\begin{tabular}{@{}lp{5cm}@{}}
+\toprule
+\textbf{Purpose} & \textbf{Estimate} \\
+\midrule
+\textbf{Legal and Incorporation} & \\
+\quad GmbH formation, notary fees, commercial register & CHF 3,000 \\
+\quad Articles of association, shareholders' agreement & CHF 2,000 \\
+
+\textbf{Banking and Accounting} & \\
+\quad PostFinance onboarding, capital deposit, KYC & CHF 2,000 \\
+\quad Fiduciary setup, bookkeeping, VAT/insurance registration & CHF 3,000 \\
+
+\textbf{Infrastructure} & \\
+\quad Secure Swiss-based hosting (Quant data, backups) & CHF 7,000 \\
+\quad DevOps infrastructure (CI/CD, repositories, monitoring) & CHF 3,000 \\
+\quad Internal hardware (workstations, local storage) & CHF 5,000 \\
+
+\textbf{Product and Data} & \\
+\quad Final prep and public launch of Quant dataset & CHF 5,000 \\
+\quad Documentation, metadata, licensing layer & CHF 2,000 \\
+
+\textbf{Marketing and Design} & \\
+\quad Brand identity, web design, communications & CHF 5,000 \\
+\quad Domain registration, email, legal pages & CHF 2,000 \\
+\quad Print collateral (product sheet, intro decks) & CHF 1,000 \\
+
+\textbf{Business Development} & \\
+\quad Investor materials, pitch prep, CRM setup & CHF 2,500 \\
+\quad Early partnership meetings and travel & CHF 2,500 \\
+
+\textbf{Core team salary} & \\
+\quad  1.0 FTE at CHF 50,000 annualised & CHF 50,000 \\
+
+\textbf{Contingency} and Reserve for adjustments, overages & CHF 5,000 \\
+
+\midrule
+\textbf{Total} & \textbf{CHF 100,000} \\
+\bottomrule
+\end{tabular}
+
+\section{Execution Timeline and Readiness Plan}
+
+SwitzerlandOmics will progress through three defined phases: technical deployment, operational setup, and early-stage outreach. This structured plan supports our transition from a research initiative to a legally established, customer-ready biotech company.
+
+\begin{enumerate}
+  \item \textbf{Phase 1: Initial deployment (Completed)}
+  \begin{itemize}
+    \item Quant DB, Quant scan, and Quant calc released for research use
+    \item Active integration in IEI and paediatric sepsis projects
+    \item Ongoing dataset validation with national and institutional partners
+  \end{itemize}
+
+  \item \textbf{Phase 2: Company foundation and infrastructure (Weeks 1 to 12)}
+  \begin{itemize}
+    \item Weeks 1–2: GmbH registration, notary appointment, legal filing
+    \item Weeks 2–3: PostFinance business account setup, capital deposit, identity verification
+    \item Weeks 3–4: Deployment of Swiss-based hosting and CI/CD infrastructure
+    \item Weeks 4–8: Appointment of fiduciary, insurance and social contributions, VAT registration
+    \item Weeks 8–12: Launch of public Quant dataset with full metadata and licensing
+  \end{itemize}
+
+  \item \textbf{Phase 3: User engagement and early access (Months 3 to 6)}
+  \begin{itemize}
+    \item Direct onboarding of commercial genomics partners, diagnostic labs, and clinical partners
+    \item Product demonstrations, walkthroughs, and technical feedback sessions
+    \item Iterative refinement of UI, documentation, and onboarding flows
+    \item Definition of licensing agreements and partnership terms
+  \end{itemize}
+\end{enumerate}
+
+
+
+\subsection{Vision}
+
+Quant will serve as the statistical backbone of trustworthy, interpretable genomics, supporting clinical, pharmaceutical, and research applications. Our goal is to establish a global standard for how genetic evidence is quantified and applied.
+
+\clearpage
+
+\section{References}
+\clearpage
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+\end{document}

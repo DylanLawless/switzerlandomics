@@ -1,0 +1,52 @@
+## Patent/Publication Analysis
+
+### Reference #1
+
+- **Title:** Systems and methods for leveraging relatedness in genomic data analysis
+- **Publication No.:** AU2023282218B2
+- **Publication Date:** 2023-01-12
+- **Link:** https://patents.google.com/patent/AU2023282218B2/en
+
+#### Abstract (excerpt)
+
+> "Methods, non-transitory computer-implemented methods and systems for identifying compound heterozygous mutations (CHMs) and de novo mutations (DNMs) in populations are provided. Also provided are methods for phasing genetic variants in a population by leveraging the population's relatedness."
+
+#### Relevant Overlaps
+
+- The patent describes methods for:
+  - Phasing genetic variants in populations using relatedness and identity-by-descent (IBD) estimates.
+  - Identifying compound heterozygous mutations (CHMs) by phasing candidate variants as cis or trans.
+  - Identifying de novo mutations (DNMs) using genotype likelihoods and pedigree structures.
+  - Filtering variants using quality metrics such as Hardy-Weinberg equilibrium violation, read depth, allele balance, and quality-by-depth.
+  - Scoring CHMs based on functional effect priority to select highest impact variants per gene per individual.
+
+- These steps reflect key technical methods similar to Quant’s approach, especially:
+  - Use of identity-by-descent and family structure for variant phasing (beyond population frequency).
+  - Explicit phasing of CHMs to infer trans vs cis configuration.
+  - Use of various QC filters on variants similar to those used by Quant.
+  - Identification and classification of DNMs within trios and filtering by genotype quality, allele balance, and read depth.
+  
+- The patent thoroughly integrates relatedness and family network information in variant interpretation, distinguishing their approach from population-frequency-only phasing methods.
+
+#### Key Differences
+
+- The patent focuses on:
+  - Leveraging pedigree and relatedness data primarily to phase variants as CHMs or identify DNMs in large population-based cohorts.
+  - Emphasis is on identification of CHMs and DNMs and their filtering/prioritization, not on integrating prior probabilities genome-wide or modeling false negatives explicitly.
+  - Does not explicitly describe computing probabilistic diagnostic certainty incorporating false negative probabilities or Bayesian integration of priors and observations as in Quant.
+  - The focus is on phasing and variant classification using relatedness rather than the genome-wide prior and posterior disease probability framework Quant offers.
+  
+- Quant’s core innovation lies in quantifying genome-wide prior probabilities of disease-causing variants and combining these with observed and unobserved data to produce Bayesian posterior probabilities of genetic diagnosis, including credible intervals of certainty.
+
+- Patent’s use of scoring CHMs is more about phenotype severity or functional effect priority rather than a Bayesian posterior probability of diagnosis certainty.
+
+- Quant explicitly models false negative rates and integrates unobserved data in diagnosis confidence, which is not apparent in this patent.
+
+#### Conclusion
+
+Potential overlap — recommend legal review.
+
+---
+
+**Summary:**  
+This patent discloses computational methods that leverage population relatedness and identity-by-descent to phase variants as compound heterozygous mutations and identify de novo mutations with extensive variant filtering. These techniques resemble several components of Quant’s methodology, particularly in employing family and relatedness data for phasing and mutation classification. However, Quant’s unique innovation of integrating genome-wide prior probabilities with observed and missing variant data into a Bayesian posterior probability of complete genetic diagnosis (including modeling false negatives and offering credible intervals) is not explicitly covered in this patent. The overlap is significant regarding methods of relatedness-based phasing of CHMs and DNM identification but does not clearly extend to Quant’s distinctive Bayesian diagnostic confidence quantification. Hence, a detailed legal review is recommended to clarify the scope of overlap and freedom-to-operate.

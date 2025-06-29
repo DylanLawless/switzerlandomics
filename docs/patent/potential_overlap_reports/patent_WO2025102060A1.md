@@ -1,0 +1,53 @@
+## Patent/Publication Analysis
+
+### Reference #1
+
+- **Title:** Accurate detection of origin of cell-free nucleic acids  
+- **Publication No.:** WO2025102060A1  
+- **Publication Date:** 2025-04-03 (publication date from source)  
+- **Link:** [https://patents.google.com/patent/WO2025102060A1/en](https://patents.google.com/patent/WO2025102060A1/en)
+
+#### Abstract (excerpt)
+
+> "Techniques are provided for accurately detecting a mutation in a cell-free nucleic acid shed from a tissue (e.g., a tumor) into blood. An example technique can distinguish between a mutation in a cell-free nucleic acid molecule derived from blood cells and a mutation in a cell-free nucleic acid molecule derived from a tumor. A cell-free sample (e.g., plasma or serum) and a cellular sample (e.g., white blood cells in a buffy coat) can be sequenced. After applying filtering criteria to respective sets of sequence reads, a particular mutation can be detected in both the cell-free sample and the cellular sample. Confidence intervals for the detection of the mutation can be determined for both samples, with an upper bound for the cellular sample and a lower bound of the cell-free sample being used to determine the origin of the mutation in the cell-free sample."
+
+#### Relevant Overlaps
+
+- The patent method sequences both plasma (cell-free DNA) and buffy coat (cellular DNA) samples from the same subject to detect mutations.
+- Applies filtering criteria including number of reads supporting a mutation and position of the mutation within reads to reduce false positives.
+- Uses statistical confidence intervals (e.g., 95% CI) around variant allele frequencies in both samples.
+- Determines origin of mutation by comparing intervals: if the lower bound of plasma VAF confidence interval is greater than the upper bound of buffy coat VAF interval, mutation is designated as originating from non-hematopoietic tissue (tumor).
+- Includes additional classification to separate clonal hematopoiesis (CHIP), mosaicism, and germline based on variant allele frequency thresholds and gene lists.
+- Identifies mutations of hematopoietic origin that could confound tumor-derived mutation detection.
+- Embeds use of machine learning models trained on matched plasma and buffy coat data to classify mutations and predict phenotypes such as diagnosis, prognosis, and likely treatment benefit.
+- Describes a workflow integrating sequencing, filtering, statistics, and ML to identify tumor-derived mutations, excluding CHIP confounders.
+- Uses variant-level and gene-level probabilities and confidence intervals to interpret sequencing data.
+
+#### Key Differences
+
+- Quant’s uniqueness lies in genome-wide prior probability calculations of pathogenic variant occurrence integrating modes of inheritance and Hardy-Weinberg Equilibrium, which are aggregated into a Bayesian posterior probability quantifying **diagnostic confidence of a complete genetic diagnosis accounting for false negatives**.
+- The patent focuses primarily on origin attribution of individual mutations detected in plasma cfDNA by comparison with buffy coat sequences and confidence intervals; it does not explicitly describe modeling complete genetic diagnostic certainty or prior probabilities genome-wide.
+- The patent's main statistical approach is comparison of confidence intervals on observed allele frequencies for individual variants to assign origin. Quant’s method integrates prior probabilities of pathogenic variant presence and models false negatives explicitly into a posterior probability of the patient harboring a causative variant.
+- No explicit use of Hardy-Weinberg Equilibrium or genome-wide priors described in the patent.
+- Patent deals primarily with somatic mutation origin assignment in liquid biopsy for cancer; Quant’s method is broader, for interpreting germline pathogenic variants genome-wide across all inheritance modes.
+- Patent’s machine learning models assist classification and treatment benefit prediction but are not described to explicitly model posterior probabilities of diagnosis or integrate unobserved variant probabilities.
+- Use of TP, FP, TN, FN classification analogs is implicit in filtering but does not explicitly model these to output credible intervals of diagnostic confidence genome-wide.
+
+#### Conclusion
+
+Potential overlap — recommend legal review.
+
+**Rationale:**  
+The patent discloses critical steps also used in Quant’s method, notably sequencing plasma and buffy coat samples, applying filtering to sequence reads, calculating confidence intervals on mutation allele frequencies in both compartments, and basing mutation origin attribution on the relationship of these confidence intervals. It deals with distinguishing true somatic tumor mutations from clonal hematopoiesis and germline variants using thresholds and gene lists. This is very close conceptually to Quant’s unique use of confidence intervals and classification of variants origin, which is essential to Quant’s Bayesian model input.
+
+However, it does not explicitly disclose or claim Bayesian integration of genome-wide prior probabilities, Hardy-Weinberg equilibrium modeling, or explicit posterior diagnostic probability calculation accounting for false negatives, which are key Quant innovations. Quant’s method extends beyond variant origin detection to quantifying whole-genome diagnostic certainty with credible intervals.
+
+Given the significant technical overlap around using TP, FP, FN analog concepts to identify mutation origin through statistical intervals from paired plasma and buffy coat sequencing, this patent is potentially blocking or at least highly relevant prior art that requires careful legal assessment relative to Quant’s claims and specific novel aspects.
+
+---
+
+**Summary:**  
+- The patent describes a mutation origin determination method very similar in theory to Quant’s approach using observed data (TP-like), joint plasma/buffy coat sequencing, and confidence intervals to classify mutations as tumor- or blood-derived.
+- It does not explicitly disclose Quant’s prior probability genome-wide modeling or posterior diagnostic confidence quantification integrating unobserved variant probabilities.
+- High conceptual and methodological overlap in variant origin detection using confidence intervals and filtering criteria; this overlaps with Quant’s use of TP/FN concepts.
+- Legal review is recommended to assess claim scope relative to Quant’s unique Bayesian genome-wide diagnosis confidence approach.

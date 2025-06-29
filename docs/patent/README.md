@@ -3,6 +3,10 @@ fto_sources.R - from the csv results, get the list of URLs of each patent main p
 fto_extract.R - function to format and sourced by fto_gather.R.
 fto_gather.R - read gp search results main URLs from csv file then download full html for patent to corpus.
 
+
+
+joint_nature_genetics_analysis.txt Final reanalysis report on the potential blocks.
+
 <!-- patent_ingest.R -->
 
 ---

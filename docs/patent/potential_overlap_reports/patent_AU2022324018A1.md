@@ -1,0 +1,46 @@
+## Patent/Publication Analysis
+
+### Reference #1
+
+- **Title:** Method and system for newborn screening for genetic diseases by whole genome sequencing
+- **Publication No.:** AU2022324018A1
+- **Publication Date:** 2023-02-02
+- **Link:** https://patents.google.com/patent/AU2022324018A1/en
+
+#### Abstract (excerpt)
+
+> "The present disclosure provides a method and system for testing newborns for genetic diseases, diagnoses and implementing optimal treatments. The invention provides for rapid detection of genetic disease in newborns, as well as identification of available therapeutic interventions that may be rapidly implemented to prevent death or adverse complications characterized by the genetic disease."
+
+#### Relevant Overlaps
+
+- Both this patent and Quant involve genome-wide analysis using sequencing data to identify disease-causing genetic variants.
+- The patent describes a method of determining sets of pathogenic/likely pathogenic variants in genes associated with genetic diseases and comparing patient variant diplotypes against these sets to identify whether the subject screens positive for a treatable genetic disease.
+- Incorporates population allele frequencies of variants to filter or prioritize variants, akin to Quant’s use of variant frequencies.
+- Considers inheritance modes (autosomal dominant, autosomal recessive, X-linked) and assesses variants in the context of diplotypes, consistent with Quant’s modeling of inheritance.
+- Emphasizes rapid whole genome sequencing and automated or autonomous interpretation and reporting, which overlaps with Quant’s goal of scalable genome-wide probabilistic diagnosis.
+- The method updates variant pathogenicity assessments and allele frequencies based on results and confirmatory testing, which shares the concept of feedback-informed learning.
+- Includes an automated platform performing natural language processing (NLP) of clinical records, mapping clinical phenotypes to ontology terms (e.g., HPO), and integrating genotype and phenotype data to generate a prioritized list of provisional diagnoses.
+- Uses Bayesian or probabilistic models (e.g., MOON software) for variant and phenotype integration, in line with Quant’s Bayesian posterior probability computation.
+- The invention provides reports including ranked variant and gene scores, lists of potential differential diagnoses, and treatment guidance linked to diagnosed genetic diseases, overlapping Quant’s end-user reports on probabilistic disease diagnosis and credible intervals for diagnostic certainty.
+- Addresses false positives and negatives through statistical thresholds and confirmatory testing, echoing Quant’s explicit modeling of false negatives (missing data) probabilities.
+- The system is designed for newborn screening and clinical diagnosis, matching Quant’s target clinical use cases.
+
+#### Key Differences
+
+- The patent does not clearly disclose the explicit and formal computation of prior probabilities of disease-causing variants genome-wide under Hardy-Weinberg equilibrium, which Quant uses as a cornerstone.
+- Quant explicitly integrates prior probabilities with observed and missing variant data to compute a Bayesian posterior confidence of a complete genetic diagnosis; in contrast, while the patent mentions Bayesian models and automated ranking, it does not emphasize the probabilistic quantification of genome-wide prior pathogenic variant frequencies and false negative probabilities in the same explicit manner.
+- Quant uniquely provides credible intervals quantifying uncertainty of diagnostic results; the patent emphasizes ranked lists and likelihoods but does not explicitly discuss credible intervals or diagnostic confidence intervals.
+- The patent is broader in scope, focusing on a comprehensive system integrating sequencing, NLP phenotyping, variant calling, interpretation, and treatment guidance, but does not detail the aggregation of variant-level priors into gene-level probabilities nor the formal treatment of unobserved data (false negatives) as Quant does.
+- The patent’s Bayesian and AI models appear to primarily prioritize variant pathogenicity and phenotype fit rather than explicitly modeling true positive (TP), false positive (FP), true negative (TN), and false negative (FN) scenarios per variant or gene as Quant does.
+- Both rely heavily on public databases (ClinVar, gnomAD, OMIM), but Quant’s innovation is in how these data are combined probabilistically across the genome for diagnostic certainty rather than solely variant classification and phenotypic ranking.
+- The patent places strong emphasis on practical clinical utility (e.g. rapid treatment guidance for ICU cases), whereas Quant’s unique focus is on the quantitative probability framework for the genetic diagnosis confidence.
+
+#### Conclusion
+
+Potential overlap — recommend legal review.
+
+---
+
+**Summary:**
+
+While the patent and Quant share many methodological elements common in genomic diagnostics such as use of population variant frequencies, pathogenicity classifications, inheritance mode considerations, and AI-based phenotype integration, the fundamental conceptual novelty of Quant—computing genome-wide prior probabilities combined with observed and unobserved variant data to derive a Bayesian posterior probability with credible intervals of a full genetic diagnosis—is not explicitly or clearly claimed in the patent. The patent discloses automated variant prioritization and diagnosis with treatment guidance but does not appear to address or claim the core theoretical framework of Quant related to prior/posterior integration and false negative modeling across the entire genome. Nevertheless, the overlap in potential applications and some algorithmic approaches indicates that a detailed legal analysis is warranted to delineate boundaries and freedom to operate.

@@ -1,0 +1,146 @@
+**Methods and Discussion**
+
+Our proprietary variant interpretation platform, Quant, introduces a novel Bayesian framework that quantifies genome-wide prior probabilities of disease-causing variants per gene across all modes of inheritance, integrates these priors with patient-specific observed and unobserved variant data—including explicit modeling of false negatives—to compute posterior probabilities reflecting diagnostic certainty and credible intervals thereof. This approach marks a fundamental departure from conventional variant interpretation tools and available prior art, which generally focus on variant pathogenicity classification or ranking without formal genome-wide integration of prior probabilities, false negative modeling, and uncertainty quantification tied directly to the confidence of a complete genetic diagnosis.
+
+In our freedom-to-operate (FTO) assessment, we examined multiple relevant patent families and publications referenced hereafter. These encompass broadly related technical domains including genome-wide variant screening for genetic diseases, newborn screening via whole genome sequencing (WGS), variant phasing with relatedness and pedigree data, computational decomposition of DNA mixtures, Bayesian machine learning classifier systems for variant dysfunction prediction, copy number and chromosomal instability analyses, non-invasive prenatal testing, liquid biopsy mutation origin identification, and Bayesian causal machine learning for variant pathogenicity inference.
+
+**1. Genome-Wide Newborn Screening and Variant Interpretation**
+
+Patents such as AU2022324018A1, CA3227737A1, and WO2023014816A1 describe automated systems for newborn genetic disease screening by WGS, coupling variant pathogenicity with phenotypic data—frequently via AI or Bayesian models—to report ranked candidate variants and provisional diagnoses, sometimes including treatment recommendations. They incorporate population allele frequencies, inheritance mode consideration, confirmatory testing feedback loops, and clinical phenotype integration via natural language processing.
+
+**Overlap:** Both these systems and Quant leverage population variant frequencies, inheritance modeling (dominant, recessive, X-linked), candidate variant diplotyping, and Bayesian or AI-based prioritization.
+
+**Differentiation:** However, they do not disclose or claim the explicit technology of computing genome-wide *prior probabilities* of pathogenic variant observation per gene under Hardy-Weinberg equilibrium, nor do they explicitly integrate false negative variant probabilities to compute posterior probabilities quantifying *diagnostic confidence* complete with credible uncertainty intervals. Quant’s core innovation uniquely quantifies the confidence that a patient harbours a disease-causing genotype *accounting for missing or unobserved variants*. Their Bayesian models mainly prioritize pathogenic variant classification or phenotype fits but lack explicit formalism combining genome-wide prior pathogenic variant frequencies and TP/FN modeling to generate credible intervals of diagnosis certainty.
+
+**Legal Implication:** Given the overlapping components yet distinctive core Bayesian diagnostic confidence modeling, these patents pose potential freedom-to-operate risks requiring detailed claim-level legal review but do not clearly block Quant’s uniquely claimed technical framework.
+
+**2. Relatedness-Based Phasing and Mutation Identification**
+
+Patent AU2023282218B2 describes computational methods leveraging population relatedness to phase variants as compound heterozygous mutations (CHMs), identify de novo mutations (DNMs), and apply stringent QC filtering.
+
+**Overlap:** Quant incorporates considerations of inheritance mode and utilizes population variant data; the patent similarly addresses phasing and mutation classification with pedigree-inferred relatedness.
+
+**Differentiation:** Critically, this patent focuses on phasing and variant identification, without formal Bayesian integration of genome-wide prior pathogenic variant probabilities or modeling of false negatives for clinical diagnosis confidence intervals, unlike Quant. The patent’s scoring of CHMs is based on functional prioritization rather than posterior diagnostic probability.
+
+**Legal Implication:** Overlap exists in variant phasing and mutation detection steps, but the absence of explicit Bayesian diagnostic confidence modeling limits the scope of infringement on Quant’s innovation, meriting further legal scrutiny.
+
+**3. Somatic and Copy Number Analyses; Tumor Variant Detection**
+
+Several patents (e.g., CA3233198A1, CN116194995A, KR20220157976A, US20240371472A1, WO2025102060A1) focus on characterization of chromosomal instability signatures, low coverage WGS-based tumor genome instability detection via neural networks or Bayesian models, somatic versus germline variant calling in tumor samples, and liquid biopsy mutation origin classification by paired WBC/plasma sequencing.
+
+**Overlap:** These patents share use of Bayesian inference, modeling of allele frequencies or coverage signals, and mitigation of false positives/negatives, with some incorporating credible intervals for mutation or variant classification.
+
+**Differentiation:** The key technical distinction is that these patents primarily address *somatic* variant detection, tumor clonality, and mutation origin classification, often employing coverage patterns or methylation signatures, whereas Quant focuses on *germline* genome-wide prior pathogenic variant probabilities integrating observed and missing germline variant data, modes of inheritance, and producing posterior probabilities of diagnostic certainty for genetic diseases with credible intervals.
+
+**Legal Implication:** While the statistical methods overlap in theory, the biological focus and clinical use cases differ substantially. Overlap is limited to general Bayesian inference approaches; Quant’s integration of prior probabilities with false negative modeling at the genome-wide diagnostic certainty level remains distinct. However, these sequencing and Bayesian model patents warrant review to clarify the boundaries of Quant’s FTO.
+
+**4. Variant Dysfunction Scoring Using Neural Networks**
+
+Patents such as EP3286677A1 and US20200097835A1 describe systems for variant-specific gene dysfunction likelihood estimation using neural networks that combine evolutionary conservation, population genetics, pathogenicity predictors, and clinical classifications.
+
+**Overlap:** Quant similarly aggregates multi-source variant annotations with population genetics and clinical data in a probabilistic model yielding variant and gene-level likelihoods.
+
+**Differentiation:** These patents predominantly predict variant *dysfunction likelihoods or pathogenicity* as continuous scores but do not explicitly integrate genome-wide prior variant occurrence probabilities with observed and missing variant data—especially false negative modeling—to compute *posterior probabilities of a complete genetic diagnosis* with uncertainty quantification as Quant does.
+
+**Legal Implication:** There exists potential overlap in variant-level dysfunction scoring methodologies, suggesting careful claim analysis is necessary but Quant’s higher-level Bayesian diagnostic probability and credible interval modeling provide key differentiating novelty.
+
+**5. Variant Interpretation via Bayesian Causal Graphical Models**
+
+WO2025050071A1 and related patents detail causal Bayesian machine learning models for integrating multi-type pathogenicity evidence structured as acyclic graphs to infer posterior variant pathogenicity probabilities.
+
+**Overlap:** Quant also performs Bayesian inference integrating multiple evidence sources for variant pathogenicity.
+
+**Differentiation:** This patent focuses on *variant-level pathogenicity prediction*; it lacks explicit disclosure of genome-wide prior pathogenic variant frequencies, false negative variant detection probability modeling, or aggregation into *posterior diagnostic probabilities at the gene or genome level* with credible intervals reflecting diagnosis confidence.
+
+**Legal Implication:** The statistical approach and evidence integration methodology overlap conceptually; however, Quant’s core diagnostic confidence quantification is not explicitly claimed, warranting detailed evaluation.
+
+**6. Noninvasive Prenatal Testing and Fetal Genotyping**
+
+WO2020049558A1 utilizes Bayesian and machine learning methods integrating parental genotypes with maternal cfDNA fragment data (including fragment length) to compute posterior fetal genotype probabilities.
+
+**Overlap:** Bayesian integration of prior genotype probabilities with fragment-level data and false negative modeling is conceptually similar to Quant’s probabilistic integration of prior pathogenic variant probabilities with observed/missing variant calls.
+
+**Differentiation:** The patent targets fetal genotype determination, whereas Quant addresses genome-wide genetic diagnosis confidence accounting for unobserved variants under inheritance models.
+
+**Legal Implication:** Due to the close Bayesian modeling similarity in variant detection probabilities, this patent represents a potential FTO issue requiring further legal assessment.
+
+**7. Variant Detection and Deconvolution in Mixed Samples**
+
+Patents such as NZ759848B2 detail Bayesian deconvolution modeling of DNA mixtures using allele counts and Hardy-Weinberg equilibrium priors to estimate contributor fractions.
+
+**Overlap:** Quant also employs Bayesian genotype and allele frequency modeling incorporating Hardy-Weinberg equilibrium priors.
+
+**Differentiation:** The patent's aim is quantification of contributor DNA fractions in mixtures (e.g., chimerism), not genome-wide genetic diagnosis posterior probabilities incorporating observed/unobserved variants and credible intervals.
+
+**Legal Implication:** Some shared Bayesian modeling elements exist, but the divergent use case and goal likely maintain separation; nonetheless, review is prudent.
+
+**8. Variant Calling and Analysis in Highly Homologous Regions**
+
+JP7634626B2 discloses methods for independent paired-end read alignment and variant calling in highly homologous genomic regions (e.g., PMS2/PMS2CL).
+
+**Overlap:** Quant employs paired-end independent read alignment and reflex testing workflows for disambiguating variants in homologous loci, matching the patent’s approach.
+
+**Differentiation:** The patent is limited to variant detection methods in difficult genomic contexts, without claiming Bayesian prior/posterior diagnostic probability frameworks.
+
+**Legal Implication:** Overlap at the alignment and variant calling step presents potential interference requiring evaluation, but Quant’s unique innovation lies in subsequent probabilistic diagnostic modeling.
+
+**9. Personalized Action Plans, Risk Assessment, and Variant Prioritization Methods**
+
+JP2011530750A and WO2018051072A1 propose genotype-based personalized risk scoring and Bayesian prioritization of candidate disease variants respectively.
+
+**Overlap:** Quant also produces prior variant probabilities and Bayesian ranked candidate lists.
+
+**Differentiation:** Quant uniquely models genome-wide prior pathogenic variant incidence, inheritance modes, TP/FN variant data integration, and credible intervals quantifying complete diagnosis certainty rather than solely risk or classification.
+
+**Legal Implication:** Patents broadly overlap in variant scoring logic but Quant’s higher-order diagnostic confidence modeling is distinct, warranting careful freedom-to-operate investigation.
+
+---
+
+**Summary of Freedom-to-Operate Assessment**
+
+The reviewed patents collectively encompass a range of methods that overlap to varying degrees with components of our Quant technology, including:
+
+- Use of population allele frequencies and clinical variant databases
+- Consideration of inheritance modes in variant assessment
+- Bayesian and machine learning methods for pathogenicity scoring
+- Variant phasing and mutation detection leveraging relatedness
+- Integration of multi-source evidence for variant classification
+- Sequencing and alignment methods addressing challenging genomic regions
+- Handling of variant origin attribution using paired samples and methylation data
+- Use of Bayesian credible intervals or confidence metrics in some contexts
+
+**However, none explicitly claim or describe the comprehensive Quant innovation of:**
+
+- Calculating *genome-wide prior probabilities* of pathogenic variant observation per gene under Hardy-Weinberg equilibrium *across all inheritance modes*
+- Explicitly modeling *false negatives* (unobserved or poorly covered variant alleles) and integrating their probabilities with observed variant data
+- Computing a *Bayesian posterior probability of carrying a pathogenic variant causally linked to disease* at the genome-wide scale
+- Producing credible intervals that quantitatively reflect *uncertainty and diagnostic confidence* in a complete genetic diagnosis rather than binary or ranked pathogenicity classifications
+- Leveraging a scalable framework that produces combined gene- and variant-level probabilities integrating population genetics, inheritance, variant observations, and unobserved data probabilistically
+
+As such, while many patents describe components or partial methods that resemble steps within Quant’s pipeline, they do not anticipate or subsume Quant’s unique higher-level Bayesian framework for diagnostic certainty quantification.
+
+**Potential freedom-to-operate blocking risks may arise in:**
+
+- Use of certain variant filtering, read alignment, and variant calling algorithms (e.g., homologous region mapping, paired-end independent alignment)
+- Components related to variant origin classification using methylation or fragment-length signatures
+- Bayesian machine learning frameworks for variant dysfunction/scoring
+- Methods leveraging phenotype NLP for variant prioritization and clinical report generation
+
+However, these do not appear to encompass the full breadth of Quant’s genome-wide prior/posterior integration with false negative modeling and diagnostic confidence intervals.
+
+---
+
+**Conclusion**
+
+Our detailed technical and legal assessment concludes that Quant’s proprietary technology distinguishes itself fundamentally from extant patented methods by formally integrating prior probabilities of pathogenic variant observability genome-wide under inheritance models with patient-specific variant data, explicitly incorporating false negative probabilities, and computing Bayesian posterior probabilities of *complete genetic diagnosis confidence* accompanied by credible intervals. This level of quantitative diagnostic certainty modeling is currently unclaimed in examined patents and publications.
+
+Despite partial method overlaps, this distinctive theoretical and algorithmic construct supports a favorable freedom-to-operate position for Quant’s unique innovation, while acknowledging that certain components (e.g., variant calling, phasing, phenotype-based prioritization) share prior art space and require continued legal diligence.
+
+We recommend ongoing detailed claim-level legal review of these prior patents focusing on:
+
+- Specific implementations of tagging, prior probability calculations, and false negative modeling
+- The extent of claims directed to Bayesian posterior probability computation reflecting diagnostic confidence
+- Novelty of credible interval generation applied to genome-wide clinical genetic diagnosis
+- Boundary delineation relative to variant filtering, classification, and phenotype integration steps
+
+Such review will enable precise identification of any required licensing, design-arounds, or patent filing opportunities to further safeguard Quant’s freedom to operate and commercial viability.

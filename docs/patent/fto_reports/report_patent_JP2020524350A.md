@@ -1,0 +1,58 @@
+## Patent/Publication Analysis
+
+### Reference #1
+
+- **Title:** Interpretation of gene and genomic variants via integrated computing and experimental deep mutation learning frameworks
+- **Publication No.:** JP2020524350A
+- **Publication Date:** 2020-03-26
+- **Link:** https://patents.google.com/patent/JP2020524350A/en
+
+#### Abstract (excerpt)
+
+> "Disclosed herein are embodiments of systems, methods, and computer program products for determining the phenotypic effects of identified molecular variants in a biological sample. Embodiments include receiving a molecular variant associated with a functional element within the model system. Embodiments then determine a molecular score associated with the model system... Embodiments then determine the phenotypic effect of the molecular variant based on the functional score or evidence score."
+
+#### Relevant Overlaps
+
+- Both the patent and Quant focus on modeling and classifying molecular variants with respect to their phenotypic effects.
+- Use of statistical/machine learning techniques to derive functional scores and classifications from molecular data.
+- The patent describes multi-dimensional modeling of large-scale variant functional effects, including the use of single cell data, molecular and phenotypic signals, and leveraging information across multiple genes and pathways.
+- The patent integrates molecular measurements, both observed and inferred functional impacts, to generate functional scores, evidence scores, variant classification, and phenotype prediction - similar high-level goals to Quant’s Bayesian posterior probability estimation of genetic diagnosis confidence.
+- Incorporation of large-scale variant datasets, population frequencies, and functional annotations, overlapping with Quant’s usage of gnomAD, ClinVar, and other public data.
+- Use of machine learning architectures such as neural networks and autoencoders to improve the accuracy of variant effect prediction.
+- Consideration of false negatives, variant observation probabilities and codifying uncertainty, which echoes Quant’s unique modeling of false negative probabilities to derive diagnostic credible intervals.
+- Description of multi-level statistical learning from variant-level molecular signals up to gene and pathway-level models, aligning with Quant's genome-wide prior probability framework.
+- Use of variant effect predictors and integrated experimental deep mutation learning (DML) frameworks to better model variant pathogenicity.
+- The patent explicitly claims probabilistic inference linking variant molecular signals to phenotypic effects.
+
+#### Key Differences
+
+- The patent focuses heavily on experimental and computational infrastructure for deep mutation learning using large scale functional assays and single cell molecular measurements, emphasizing training classifiers from these.
+- Quant’s distinct novelty is in explicitly modeling prior probabilities of variant pathogenicity genome-wide, integrating these priors with observed and unobserved variant data from an individual, to compute Bayesian posterior probabilities of a complete genetic diagnosis including false negatives.
+- The patent does not discuss the concept of integrating prior pathogenicity probabilities with false negative assessment in clinical sequencing data to obtain diagnostic credible intervals or posterior confidence.
+- Quant’s approach is tailored to clinical diagnostic certainty quantification rather than only variant classification or prediction.
+- No explicit mention in the patent of modeling Hardy-Weinberg equilibrium-based variant occurrence priors or providing credible intervals reflecting diagnostic certainty as in Quant.
+
+#### Conclusion
+
+Potential overlap — recommend legal review.
+
+---
+
+**Summary:**
+
+While the patent broadly covers systems and methods for molecular variant phenotypic effect classification using deep mutation learning, neural networks, single cell data, and multiparameter statistical models, its focus is on prediction of variant pathogenicity from molecular/functional experimental data. Quant’s distinctive inventive concept is the integration of genome-wide prior probabilities with patient-observed and missing variant data (including explicit false negative modeling) to yield Bayesian posterior probabilities of genetic diagnosis confidence, a higher-level inference rarely addressed in prior art.
+
+Due to the significant conceptual similarity in variant effect prediction and classification, but with clear key differences in purpose, data integration, and modeling approach (especially around clinical diagnostic certainty quantification via Bayesian posterior), this patent represents a relevant but not necessarily blocking reference.
+
+---
+
+# Short Notes
+
+- The patent presents a complex method of using experimental deep mutation scanning data, molecular and population signals, and multi-level modeling (autoencoders, neural networks), also considering variant effects and functional scores.
+- Quant emphasizes generating variant and gene-level genome-wide prior probabilities, integrates those with observed/missing patient variants, explicitly models false negatives, and outputs a credible interval Bayesian posterior probability of a genetic diagnosis.
+- Overlap centers on machine learning variant classification; key difference is diagnostic confidence inference with false negative modeling in Quant.
+- The patent documents integration of functional and phenotypic molecular data but stops short of clinical diagnostic posterior probability estimation.
+
+---
+
+If additional patents or publications are provided, further analyses can be conducted following this template.
